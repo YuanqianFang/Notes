@@ -284,7 +284,7 @@ Vue监视数据的原理：
 
 
 
-![生命周期](C:\Users\DELL\Desktop\vue_basic\VUE\解压后课件笔记\资料（含课件）\02_原理图\生命周期.png)
+![生命周期](生命周期.png)
 
 ------
 
@@ -410,3 +410,23 @@ Vue监视数据的原理：
 
 ​              Vue的实例对象，以后简称vm。
 
+
+
+
+
+```javascript
+function Demo(){
+	this.a = 1
+	this.b = 2
+}
+
+const c = new Demo()
+Demo.prototype   //显示原型属性
+c.__proto__		 //隐式原型属性
+                 //这两个属性都指向同一个原型
+
+```
+
+
+
+![VueComponent](VueComponent.png)
