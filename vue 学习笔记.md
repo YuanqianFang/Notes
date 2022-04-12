@@ -62,24 +62,24 @@ v-pre指令：
 
 ​                  (1).局部指令：
 
-​                        `new Vue({`                            
-
-​                          	`directives:{指令名:配置对象}`  
+​                       
 
 ```vue
-				   `})` 
+        `new Vue({`                            
+            `directives:{指令名:配置对象}`
+        `})` 
 ```
 
 
 
 ​    					或                                
 
-​						 `new Vue({`
-
-​                             `directives{指令名:回调函数}`
+​						 
 
 ```vue
-					 `})`
+            `new Vue({`
+                `directives{指令名:回调函数}`					 
+            `})`
 ```
 
 ​						注意回调函数、配置对象中的this 指向的是 window
@@ -192,9 +192,9 @@ Vue监视数据的原理：
 
 ​        4.在Vue修改数组中的某个元素一定要用如下方法：
 
-​              1.使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse()
+​               1.使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse()
 
-​              2.Vue.set() 或 vm.$set()
+​               2.Vue.set() 或 vm.$set()
 
 ​        
 
@@ -413,6 +413,14 @@ Vue监视数据的原理：
 
 
 
+
+
+
+
+
+
+
+原型回顾：
 
 ```javascript
 function Demo(){
