@@ -151,7 +151,9 @@
 3. 相关API：
 
     1. ```xxxxxStorage.setItem('key', 'value');```
-        				该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+          	该方法接受一个键和值作为参数，会把键值对添加到存储中，如果键名存在，则更新其对应的值。
+
+          传入value值要注意使用 `JSON.stringify()`
 
     2. ```xxxxxStorage.getItem('person');```
 
@@ -176,7 +178,7 @@
 
 1. 一种组件间通信的方式，适用于：<strong style="color:red">子组件 ===> 父组件</strong>
 
-2. 使用场景：A是父组件，B是子组件，B想给A传数据，那么就要在A中给B绑定自定义事件（<span style="color:red">事件的回调在A中</span>）。
+2. 使用场景：A是父组件，B是子组件，B想给A传数据，那么就要在A中给B绑定自定义事件（<span style="color:red">事件的回调在A中</span>）。 个人理解：最终是触发A组件中的定义的函数来捕获传过来的数据并进行操作
 
 3. 绑定自定义事件：
 
@@ -196,9 +198,15 @@
 
 4. 触发自定义事件：```this.$emit('atguigu',数据)```		
 
-5. 解绑自定义事件```this.$off('atguigu')```
+5. 解绑自定义事件```this.$off('atguigu')```  
+
+    如果要解绑多个自定义事件则将自定义事件名称以字数组的形式传入 
+
+    如果要解绑所有的自定义事件则不传入任何参数
 
 6. 组件上也可以绑定原生DOM事件，需要使用```native```修饰符。
+
+    （如果不用native修饰符，那么会被认为是组件的自定义事件）
 
 7. 注意：通过```this.$refs.xxx.$on('atguigu',回调)```绑定自定义事件时，回调<span style="color:red">要么配置在methods中</span>，<span style="color:red">要么用箭头函数</span>，否则this指向会出问题！
 
@@ -242,7 +250,7 @@
 
 2. 使用步骤：
 
-   1. 安装pubsub：```npm i pubsub-js```
+   1. 安装pubsub：```npm i pubsub-js```    （pubsub-js 是一个第三方库）
 
    2. 引入: ```import pubsub from 'pubsub-js'```
 
@@ -254,13 +262,13 @@
       }
       ......
       mounted() {
-        this.pid = pubsub.subscribe('xxx',this.demo) //订阅消息
+        this.pid = pubsub.subscribe('xxx',this.demo) //订阅消息 注意：pubsub第一个传回来的参数是定义的订阅发布的名称（即'xxx'）这个名称一般是不需要的 第二个才是需要的数据 所以可以将method写为 demo(_,data) _用来存放不使用的名称参数
       }
       ```
 
    4. 提供数据：```pubsub.publish('xxx',数据)```
 
-   5. 最好在beforeDestroy钩子中，用```PubSub.unsubscribe(pid)```去<span style="color:red">取消订阅。</span>
+   5. 最好在beforeDestroy钩子中，用```PubSub.unsubscribe(pid)```去<span style="color:red">取消订阅。</span> （订阅函数会返回一个pid 值）
 	
 ## nextTick
 
@@ -1065,5 +1073,5 @@ module.exports = {
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
    3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
-	 
+	
 	 
