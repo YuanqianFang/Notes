@@ -446,9 +446,8 @@ module.exports = {
                      }
                  </script>
          ```
-   ```
    
-   ```
+   
 
 ## Vuex
 
@@ -459,6 +458,12 @@ module.exports = {
 ### 2.何时使用？
 
 ​		多个组件需要共享数据时
+
+​	
+
+#### 		Vuex 工作原理图
+
+![vuex](vuex.png)
 
 ### 3.搭建vuex环境
 
