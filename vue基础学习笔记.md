@@ -284,7 +284,7 @@ Vue监视数据的原理：
 
 
 
-![生命周期](生命周期.png)
+![生命周期](/picture/生命周期.png)
 
 ------
 
@@ -437,4 +437,4 @@ c.__proto__		 //隐式原型属性
 
 
 
-![VueComponent](VueComponent.png)
+![VueComponent](/picture/VueComponent.png)
