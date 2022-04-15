@@ -280,7 +280,7 @@
 
 1. 作用：在插入、更新或移除 DOM元素时，在合适的时候给元素添加样式类名。
 
-2. 图示：<img src="https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105" style="width:60%" />
+2. 图示：![alt text](https://img04.sogoucdn.com/app/a/100520146/5990c1dff7dc7a8fb3b34b4462bd0105 "1")
 
 3. 写法：
 
@@ -463,7 +463,7 @@ module.exports = {
 
 #### 		Vuex 工作原理图
 
-![vuex](vuex.png)
+![vuex](/picture/vuex.png)
 
 ### 3.搭建vuex环境
 
