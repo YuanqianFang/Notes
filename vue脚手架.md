@@ -621,15 +621,19 @@ module.exports = {
 
    ```js
    methods:{
-       //靠mapActions生成：increment、decrement（对象形式）
+       //靠mapMutations生成：increment、decrement（对象形式）
        ...mapMutations({increment:'JIA',decrement:'JIAN'}),
        
-       //靠mapMutations生成：JIA、JIAN（对象形式）
+       //靠mapMutations生成：JIA、JIAN（数组形式）
        ...mapMutations(['JIA','JIAN']),
    }
    ```
 
 > 备注：mapActions与mapMutations使用时，若需要传递参数需要：在模板中绑定事件时传递好参数，否则参数是事件对象。
+>
+> 名称一致时，才能使用数组形式
+>
+> 
 
 ### 7.模块化+命名空间
 
